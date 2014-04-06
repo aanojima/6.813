@@ -1,0 +1,32 @@
+@font-face {
+    font-family: 'ostrich_sansmedium';
+    src: url('../font/ostrich/ostrich-regular-webfont.eot');
+    src: url('../font/ostrich/ostrich-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/ostrich/ostrich-regular-webfont.woff') format('woff'),
+         url('../font/ostrich/ostrich-regular-webfont.ttf') format('truetype'),
+         url('../font/ostrich/ostrich-regular-webfont.svg#ostrich_sansmedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+#accountMain {
+    bottom: 0px;
+    background: url("../images/AccountBackground.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+#Overview {
+    text-align: center;
+    font-family: : 'ostrich_sansmedium', Arial, sans-serif;
+    margin-top: .8cm;
+    font-size: 75px;
+}
+
+.column {
+    margin-top: 3cm;
+    font-size: 25px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
