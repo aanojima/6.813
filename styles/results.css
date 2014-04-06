@@ -1,0 +1,13 @@
+body {
+	margin : 0px;
+}
+
+.sidebar {
+	overflow : hidden;
+	position : fixed;
+	top : 50px;
+	bottom : 0px;
+	left : 0px;
+	width : 300px;
+	border : black solid 5px;
+}

@@ -1,0 +1,8 @@
+/* index.css for Uchi */
+
+#main {
+    bottom: 0px;
+    background: url("../images/main.jpg");
+    background-size: cover;
+    background-position: center;
+}
