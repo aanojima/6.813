@@ -77,7 +77,7 @@ input[type=password] {
     z-index: 100;
     /* background & shadow */
     background-color: #FFFFFF;
-    box-shadow: 0px 1px 2px #111111;
+    box-shadow: 0px 1px 2px #555555;
     /* text */
     color: #000000;
 }
@@ -153,7 +153,7 @@ input[type=password] {
 .main-content {
     /* position & size */
     position: absolute;
-    top: 50px;
+    top: 64px;
     left: 0px;
     right: 0px;
     padding: 10px;

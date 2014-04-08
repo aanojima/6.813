@@ -1,8 +1,54 @@
 /* index.css for Uchi */
 
 #main {
-    bottom: 0px;
-    background: url("../images/main.jpg");
+    /* position & size */
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 300px;
+    padding: 50px;
+    /* background */
+    background: url("../images/Design1.jpg");
     background-size: cover;
     background-position: center;
+    /* text */
+    color: #FFFFFF;
+}
+
+#main h1 {
+    /* text */
+    text-align: center;
+    text-shadow: 0px 0px 10px #000000;
+    font-size: 64px;
+}
+
+#about {
+    /* position & size */
+    position: absolute;
+    top: 400px;
+    left: 0px;
+    right: 0px;
+    height: 200px;
+    padding: 20px 50px 20px 50px;
+    /* background */
+    background-color: #FFFFFF;
+    box-shadow: 0px -1px 2px #555555;
+    /* text */
+    color: #000000;
+}
+
+#about h1 {
+    /* text */
+    font-size: 24px;
+}
+
+#footer {
+    /* position & size */
+    position: absolute;
+    top: 720px;
+    left: 0px;
+    right: 0px;
+    /* text */
+    color: #000000;
 }
