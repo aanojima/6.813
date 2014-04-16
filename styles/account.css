@@ -11,10 +11,12 @@
 }
 
 #accountMain {
+    position: absolute;
     bottom: 0px;
     background: url("../images/AccountBackground.jpg");
-    background-size: cover;
     background-position: center;
+    background-size: 100%;
+    
 }
 
 #Overview {
@@ -24,9 +26,82 @@
     font-size: 75px;
 }
 
+#liked{
+    font-size: 45px;
+}
+
+#likedbox{
+    position: absolute;
+    padding: 20px;
+    height: 100%;
+    width: 90%;
+    overflow: scroll;
+}
+
+.row1{
+    position: absolute;
+    height: 30%;
+}
+.row2{
+    position: absolute;
+    top: 240px;
+    height: 30%;
+}
+.row3{
+    position: absolute;
+    top: 460px;
+    height: 30%;
+}
+.row4{
+    position: absolute;
+    top: 680px;
+    height: 30%;
+}
+.col1{
+    position: absolute;
+    left: 0;
+    width: 30%;
+}
+.col2{
+    position: absolute;
+    left: 240px;
+    width: 30%;
+}
+
+.image{
+    position: absolute;
+    height: 200px;
+    width:200px;
+}
+
+.A_description {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(29, 106, 154, 0.72);
+  color: #fff;
+  z-index: 5;
+
+  visibility: hidden;
+  opacity: 0;
+}
+.A_description:hover {
+    visibility: visible; 
+}
+.image:hover {
+    opacity:.7;
+}
+
+#past{
+font-size: 45px;
+}
+
 .column {
     margin-top: 3cm;
     font-size: 25px;
     padding-left: 30px;
     padding-right: 30px;
+    bottom:10px;
 }
