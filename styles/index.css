@@ -1,5 +1,9 @@
 /* index.css for Uchi */
 
+h1 {
+    font-family: 'ostrich_sansmedium';
+}
+
 #main {
     /* position & size */
     position: absolute;
@@ -17,10 +21,25 @@
 }
 
 #main h1 {
+    /* position */
+    margin-top: 0px;
     /* text */
     text-align: center;
     text-shadow: 0px 0px 10px #000000;
-    font-size: 64px;
+    font-size: 128px;
+}
+
+#searchbox {
+    /* position & size */
+    position: absolute;
+    top: 250px;
+    left: 0px;
+    right: 0px;
+    padding: 10px;
+    /* text */
+    text-align: center;
+    /* background */
+    background: rgba(0,0,0,.5);
 }
 
 #about {

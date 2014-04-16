@@ -12,6 +12,7 @@ Studio Section: Connie 12pm
     <head>
         <title>UCHI</title>
         <!-- Styles -->
+        <link rel="stylesheet" type="text/css" href="font/ostrich/stylesheet.css" />
         <link rel="stylesheet" type="text/css" href="styles/master.css" />
         <link rel="stylesheet" type="text/css" href="styles/index.css" />
         <!-- JavaScript -->
@@ -35,8 +36,14 @@ Studio Section: Connie 12pm
             <div id="main">
                 <h1>UCHI</h1>
                 <div id="searchbox">
-                    <input type="text" placeholder="Room type"/>
-                    <input type="text"/>
+                    <span class="bold">I want inspiration for my... </span>
+                    <select id="inp_room" class="input-large">
+                        <option value="living_room">Living Room</option>
+                        <option value="kitchen">Kitchen</option>
+                        <option value="bedroom">Bedroom</option>
+                        <option value="bathroom">Bathroom</option>
+                    </select>
+                    <button id="inp_submit" type="submit" class="button bold">Go &raquo;</button>
                 </div>
             </div>
             <div id="about">
