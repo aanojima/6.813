@@ -1,23 +1,21 @@
 <!DOCTYPE>
-<html>
+<html ng-app>
 	<head>
-
+		<!-- Header Information -->
 		<meta charset="UTF-8">
 		<title>UCHI - Results</title>
-
 		<!-- Javascript Libraries -->
-		<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="js/jquery-ui.js"></script>
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.5/angular.min.js"></script>
-
 		<!-- Stylesheets -->
 		<link rel="stylesheet" type="text/css" href="styles/master.css" />
 		<link rel="stylesheet" type="text/css" href="styles/results.css" />
-
+		<link rel="stylesheet" type="text/css" href="styles/jquery-ui.css" />
 		<!-- Javascripts -->
-		<script type="text/javascript" src="js/results.js"></script>
-
+		<script type="text/javascript" src="js/results_controller.js"></script>
 	</head>
-	<body>
+	<body ng-controller="ResultsController">
 		<div class="navbar">
 	        <div class="navbar-left">
 	            <div class="navbar-brand">&nbsp;UCHI</div>
@@ -27,7 +25,34 @@
 	            <div class="navbar-button">Sign Up</div>
 	        </div>
 	    </div>
-		<div class="sidebar"></div>
-		<div class="main_content"></div>
+		<div class="sidebar" ng-model="filters">
+			<div class="search-filter filter-room" ng-model="room">
+				<div><b>ROOM</b></div>
+				<select ng-options="room for room in options.rooms"></select>
+			</div>
+			<div class="search-filter filter-color" ng-model="colors">
+				<div style="height:100%">
+					<div><b>COLOR</b></div>
+					<div id="{{color}}_color" style="background-color:{{color}}" class="color_option" value="{{color}}" ng-repeat="color in options.colors">{{color}}</div>
+				</div>
+			</div>
+			<div class="search-filter filter-style" ng-model="styles">
+				<div><b>STYLE</b></div>
+				<div id="{{style}}_style" class="style_option" value="{{style}}" ng-repeat="style in options.styles">{{style}}</div>
+			</div>
+			<div class="search-filter filter-budget" ng-model="budget">
+				<div><b>BUDGET</b></div>
+				<div id="budget_slider"></div>
+			</div>
+		</div>
+		<div class="main_content">
+			<div class="result_header">RESULTS</div>
+			<div class="result_grid">
+				<div class="result" ng-repeat="result in results">
+					<b>{{result}}</b>
+					<img src="http://gallery.photo.net/photo/2241657-md.jpg"/>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>

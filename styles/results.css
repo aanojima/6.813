@@ -5,9 +5,98 @@ body {
 .sidebar {
 	overflow : hidden;
 	position : fixed;
-	top : 50px;
+	top : 64px;
 	bottom : 0px;
 	left : 0px;
 	width : 300px;
-	border : black solid 5px;
+	box-shadow : 0px 1px 2px #000000;
+}
+
+.main_content {
+	position : absolute;
+	top : 64px;
+	right : 0px;
+	left : 300px;
+	min-height: 114px;
+}
+
+.search-filter {
+	width : 100%;
+	height : 25%;
+	text-align : center;
+}
+
+.result_header {
+	position: fixed;
+	z-index: 50;
+	top: 64px;
+	left: 300px;
+	right: 0px;
+	height: 100px;
+	background-color: black;
+	color: white;
+	text-align: center;
+	font-size: 72;
+}
+
+.result_grid {
+	overflow: hidden;
+	position: relative;
+	top: 100px;
+	width: 100%;
+}
+
+.result {
+	text-align: center;
+	position: relative;
+	float:left;
+	height: 300px;
+	width: 300px;
+	margin : 10px;
+	border : solid black 1px;
+}
+
+.result img {
+	position: relative;
+	width : 100%;
+}
+
+#budget_slider {
+	top : 25%;
+	width : 250px;
+	margin : auto;
+}
+
+.filter_color {
+	overflow : hidden;
+	position : relative;
+	width : 100%;
+}
+
+.color_option {
+	position : relative;
+	float : left;
+	display : inline-block;
+	height : 60px;
+	width : 60px;
+	max-height: 20%;
+	max-width: 30%;
+	margin : 5px;
+	border : solid black 1px;
+}
+
+#black_color {
+	color : white;
+}
+
+.style_option {
+	position : relative;
+	float : left;
+	display: inline-block;
+	height : 60px;
+	width : 60px;
+	max-height: 20%;
+	max-width: 30%;
+	margin : 5px;
+	border : solid black 1px;
 }
