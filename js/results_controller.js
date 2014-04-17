@@ -1,5 +1,3 @@
-var passUrlVar;
-
 function ResultsController($scope){
 
 	$scope.results = ["Wow", "Such Design", "Many Results", "Very Impressive", "Eric", "Nayeon", "Eugene", "Noj"];
@@ -19,6 +17,69 @@ function ResultsController($scope){
 			max : 5000,
 		},
 	};
+
+	$scope.applyFilters = function(data){
+		delete $scope.results;
+		$scope.results = [];
+		for (var id in data){
+			if (!data[id]){
+				break;
+			}
+			var result = data[id];
+			if (result.filters.room != $scope.filters.rooms){
+				continue;
+			}
+			if (result.filters.price < $scope.filters.budget.min ||
+				result.filters.price > $scope.filters.budget.max){
+				continue;
+			}
+			// matching style
+			var styleNotFound = true;
+			for (var i in result.filters.styles){
+				var style = result.filters.styles[i];
+				var index = $scope.filters.styles.indexOf(style);
+				if (index > -1){
+					styleMatch = true;
+					break;
+				}
+			}
+			if (!styleNotFound){
+				continue;
+			}
+			// matching color
+			var colorNotFound = true;
+			for (var i in result.filters.colors){
+				var color = result.filters.colors[i];
+				var index = $scope.filters.colors.indexOf(color);
+				if (index > -1){
+					colorNotFound = false;
+					break;
+				}
+			}
+			if (!colorNotFound){
+				continue;
+			}
+			$scope.results.push(result);
+		}
+	}
+
+	// For the luls
+	deployTheAlgorithm = function(data){
+		$scope.applyFilters(data);
+	}
+
+	$scope.newSearch = function(){
+		var results;
+
+		$.ajax({
+			method : "POST",
+			url : "data.json", // TODO
+			success : deployTheAlgorithm,
+			error : function(error){
+				console.log("XMLHttpRequest Error");
+			}
+		});
+	}
 
 	// Model-View Handler
 	$(document).ready(function(){
@@ -128,7 +189,7 @@ function ResultsController($scope){
 					$scope.filters.budget.max = max;
 					$("#max-budget").text("Max: " + String(max));
 				}
-				// TODO
+				$scope.newSearch();
 			}
 		});
 
@@ -140,7 +201,7 @@ function ResultsController($scope){
 		$(".filter-room select").on("change", function(event){
 			var room = $(".search-filter option:selected").val();
 			$scope.filters.room = room;
-			// TODO
+			$scope.newSearch();
 		});
 
 		// Update Colors on Change
@@ -161,7 +222,7 @@ function ResultsController($scope){
 				$(this).css({border : "solid blue 2px"});
 				$scope.filters.colors.push(color);
 			}
-			// TODO
+			$scope.newSearch();
 		});
 
 		// Update Styles on Change
@@ -183,7 +244,7 @@ function ResultsController($scope){
 				$scope.filters.styles.push(style);
 			}
 		});
-		// TODO
+		$scope.newSearch();
 	});
 
 }
