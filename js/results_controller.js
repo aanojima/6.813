@@ -4,9 +4,9 @@ function ResultsController($scope){
 	$scope.results = window.data;
 
 	$scope.options = {
-		rooms : ["Living Room", "Kitchen", "Bedroom", "Bathroom"],
-		colors : ["Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Brown", "Gray", "Black", "White"],
-		styles : ["Antique", "Country", "Modern", "Basic"],
+		rooms : ["", "Living Room", "Kitchen", "Bedroom", "Bathroom"],
+		colors : ["Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Brown", "Gray", "Black", "White", "MintCream"],
+		styles : ["Antique", "Rustic", "Modern", "Retro", "Romantic", "Simple", "Luxury", "Industrial"],
 	};
 
 	$scope.filters = {
@@ -35,31 +35,36 @@ function ResultsController($scope){
 				continue;
 			}
 			// matching style
-			var styleNotFound = true;
-			for (var i in result.filters.styles){
-				var style = result.filters.styles[i];
-				var index = $scope.filters.styles.indexOf(style);
+			var styleMatch = false;
+			for (var i in $scope.filters.styles){
+				var style = $scope.filters.styles[i];
+				var index = result.filters.styles.indexOf(style);
 				if (index > -1){
-					styleNotFound = false;
+					styleMatch = true;
+				} else {
+					styleMatch = false;
 					break;
 				}
 			}
-			if ($scope.filters.styles.length > 0 && styleNotFound){
+			if ($scope.filters.styles.length > 0 && !styleMatch){
 				continue;
 			}
 			// matching color
-			var colorNotFound = true;
-			for (var i in result.filters.colors){
-				var color = result.filters.colors[i];
-				var index = $scope.filters.colors.indexOf(color);
+			var colorMatch = false;
+			for (var i in $scope.filters.colors){
+				var color = $scope.filters.colors[i];
+				var index = result.filters.colors.indexOf(color);
 				if (index > -1){
-					colorNotFound = false;
+					colorMatch = true;
+				} else {
+					colorMatch = false;
 					break;
 				}
 			}
-			if ($scope.filters.colors.length > 0 && colorNotFound){
+			if ($scope.filters.colors.length > 0 && !colorMatch){
 				continue;
 			}
+
 			$scope.results[id] = result;
 		}
 		$scope.updateResultsView();
@@ -68,15 +73,18 @@ function ResultsController($scope){
 	$scope.updateResultsView = function(){
 		var result_grid = $(".result_grid")[0];
 		result_grid.innerHTML = "";
-		for (var i in $scope.results){
-			var result = $scope.results[i];
+		for (var id in $scope.results){
+			var result = $scope.results[id];
+			var link = document.createElement('a');
+			link.href = "result.html?id=" + id;
 			var div = document.createElement('div');
 			div.className = "result";
 			var text = document.createElement('b');
 			text.innerHTML = result.information.name;
 			var img = document.createElement('img');
 			img.src = result.information.image;
-			result_grid.appendChild(div);
+			result_grid.appendChild(link);
+			link.appendChild(div);
 			div.appendChild(text);
 			div.appendChild(img);
 		}

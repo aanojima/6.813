@@ -2,28 +2,28 @@ window.data = {
     00: {
         filters: {
             room: "Living Room",
-            colors: ["cream", "black", "brown"],
-            styles: ["rustic"],
+            colors: ["MintCream", "Black", "Brown"],
+            styles: ["Rustic"],
             price: 2530,
         },
         information: {
             name: "Clean Cotton",
-            image: "images/white_LR.jpg",
+            image: "images/White_LR.jpg",
             designer: "Eugene Oh",
-            description: "Inspired by an oceanfront cabin, this livingroom offers a simple, refreshing balance of oak and white linen." 
+            description: "InspiRed by an oceanfront cabin, this livingroom offers a simple, refreshing balance of oak and White linen." 
         }   
     },
     
     01: {
         filters: {
             room: "Living Room",
-            colors: ["purple", "grey"],
-            styles: ["antique"],
+            colors: ["Purple", "Gray"],
+            styles: ["Antique"],
             price: 1100,
         },
         information: {
             name: "Golden Morocco",
-            image: "images/purple_LR.jpeg",
+            image: "images/Purple_LR.jpeg",
             designer: "Nayeon Kim",
             description: "A tasteful blend of cozy velvet furnishings with a hint of vibrant gold." 
         }   
@@ -32,13 +32,13 @@ window.data = {
     02: {
         filters: {
             room: "Kitchen",
-            colors: ["red", "white"],
-            styles: ["modern", "retro"],
+            colors: ["Red", "White"],
+            styles: ["Modern", "Retro"],
             price: 1800,
         },
         information: {
             name: "Retro Panorama",
-            image: "images/red_K.jpg",
+            image: "images/Red_K.jpg",
             designer: "Eugene Oh",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet lectus eleifend." 
         }   
@@ -47,8 +47,8 @@ window.data = {
     03: {
         filters: {
             room: "Kitchen",
-            colors: ["orange", "black"],
-            styles: ["modern", "retro"],
+            colors: ["Orange", "Black"],
+            styles: ["Modern", "Retro"],
             price: 1800,
         },
         information: {
@@ -62,8 +62,8 @@ window.data = {
     04: {
         filters: {
             room: "Kitchen",
-            colors: ["grey"],
-            styles: ["simple"],
+            colors: ["Gray"],
+            styles: ["Simple"],
             price: 650,
         },
         information: {
@@ -77,13 +77,13 @@ window.data = {
     05: {
         filters: {
             room: "Kitchen",
-            colors: ["green", "white"],
-            styles: ["modern", "retro"],
+            colors: ["Green", "White"],
+            styles: ["Modern", "Retro"],
             price: 2000,
         },
         information: {
             name: "Organic Grass",
-            image: "images/green_K.jpg",
+            image: "images/Green_K.jpg",
             designer: "Eugene Oh",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet lectus eleifend." 
         }   
@@ -92,8 +92,8 @@ window.data = {
     06: {
         filters: {
             room: "Bathroom",
-            colors: ["grey", "white", "green"],
-            styles: ["modern", "industrial"],
+            colors: ["Gray", "White", "Green"],
+            styles: ["Modern", "Industrial"],
             price: 570,
         },
         information: {
@@ -107,8 +107,8 @@ window.data = {
     07: {
         filters: {
             room: "Bathroom",
-            colors: ["gold", "yellow", "cream", "brown"],
-            styles: ["luxury", "antique"],
+            colors: ["gold", "Yellow", "MintCream", "Brown"],
+            styles: ["Luxury", "Antique"],
             price: 4750,
         },
         information: {
@@ -122,13 +122,13 @@ window.data = {
     08: {
         filters: {
             room: "Bathroom",
-            colors: ["blue", "white"],
-            styles: ["antique"],
+            colors: ["Blue", "White"],
+            styles: ["Antique"],
             price: 1000,
         },
         information: {
             name: "Deep Sea Dive",
-            image: "images/blue_BR.jpg",
+            image: "images/Blue_BR.jpg",
             designer: "Eric Schmidt",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet lectus eleifend." 
         }   
@@ -137,8 +137,8 @@ window.data = {
     09: {
         filters: {
             room: "Bedroom",
-            colors: ["purple", "white", "cream", "brown"],
-            styles: ["romantic", "simple"],
+            colors: ["Purple", "White", "MintCream", "Brown"],
+            styles: ["Romantic", "Simple"],
             price: 4500,
         },
         information: {
@@ -152,13 +152,13 @@ window.data = {
     10: {
         filters: {
             room: "Bedroom",
-            colors: ["blue", "white", "cream"],
-            styles: ["simple"],
+            colors: ["Blue", "White", "MintCream"],
+            styles: ["Simple"],
             price: 2800,
         },
         information: {
             name: "Zen Blue",
-            image: "images/bluewhite_BD.jpg",
+            image: "images/BlueWhite_BD.jpg",
             designer: "Eugene Oh",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet lectus eleifend." 
         }   
@@ -167,13 +167,13 @@ window.data = {
     11: {
         filters: {
             room: "Bedroom",
-            colors: ["brown", "white", "cream"],
-            styles: ["modern", "simple"],
+            colors: ["Brown", "White", "MintCream"],
+            styles: ["Modern", "Simple"],
             price: 2750,
         },
         information: {
             name: "The Master Suite",
-            image: "images/brown_BD.jpg",
+            image: "images/Brown_BD.jpg",
             designer: "Aaron Nojima",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet lectus eleifend." 
         }   
@@ -182,13 +182,13 @@ window.data = {
     12: {
         filters: {
             room: "Bedroom",
-            colors: ["black", "grey"],
-            styles: ["modern", "simple"],
+            colors: ["Black", "Gray"],
+            styles: ["Modern", "Simple"],
             price: 800,
         },
         information: {
             name: "The Batman",
-            image: "images/black_BD.jpg",
+            image: "images/Black_BD.jpg",
             designer: "Eric Schmidt",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet lectus eleifend." 
         }   
@@ -197,13 +197,13 @@ window.data = {
     13: {
         filters: {
             room: "Bedroom",
-            colors: ["green", "white", "cream", "black"],
-            styles: ["simple"],
+            colors: ["Green", "White", "MintCream", "Black"],
+            styles: ["Simple"],
             price: 1200,
         },
         information: {
             name: "The Jungle Prowler",
-            image: "images/green_BD.jpg",
+            image: "images/Green_BD.jpg",
             designer: "Aaron Nojima",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet lectus eleifend." 
         }   
@@ -212,13 +212,13 @@ window.data = {
     14: {
         filters: {
             room: "Bedroom",
-            colors: ["yellow", "white", "grey"],
-            styles: ["modern", "retro"],
+            colors: ["Yellow", "White", "Gray"],
+            styles: ["Modern", "Retro"],
             price: 2750,
         },
         information: {
             name: "Rays of Sunshine",
-            image: "images/yellow_BD.jpg",
+            image: "images/Yellow_BD.jpg",
             designer: "Eugene Oh",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet lectus eleifend." 
         }   
@@ -227,13 +227,13 @@ window.data = {
     15: {
         filters: {
             room: "Bedroom",
-            colors: ["red", "cream"],
-            styles: ["modern", "simple", "romantic"],
+            colors: ["Red", "MintCream"],
+            styles: ["Modern", "Simple", "Romantic"],
             price: 3450,
         },
         information: {
             name: "Rose Room",
-            image: "images/red_BD.jpg",
+            image: "images/Red_BD.jpg",
             designer: "Aaron Nojima",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet lectus eleifend." 
         }   
@@ -242,8 +242,8 @@ window.data = {
     16: {
         filters: {
             room: "Bedroom",
-            colors: ["black", "white", "grey"],
-            styles: ["modern", "simple"],
+            colors: ["Black", "White", "Gray"],
+            styles: ["Modern", "Simple"],
             price: 1000,
         },
         information: {
@@ -257,8 +257,8 @@ window.data = {
     17: {
         filters: {
             room: "Bedroom",
-            colors: ["blue"],
-            styles: ["simple", "luxury"],
+            colors: ["Blue"],
+            styles: ["Simple", "Luxury"],
             price: 2000,
         },
         information: {
@@ -272,13 +272,13 @@ window.data = {
     18: {
         filters: {
             room: "Bedroom",
-            colors: ["purple", "cream"],
-            styles: ["romantic", "simple"],
+            colors: ["Purple", "MintCream"],
+            styles: ["Romantic", "Simple"],
             price: 4000,
         },
         information: {
             name: "Sweet Dreams",
-            image: "images/purple_BD.jpg",
+            image: "images/Purple_BD.jpg",
             designer: "Nayeon Kim",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet lectus eleifend." 
         }   
