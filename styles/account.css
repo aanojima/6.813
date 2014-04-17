@@ -1,0 +1,86 @@
+h1, h2 {
+    font-family: 'ostrich_sansmedium', Arial, sans-serif;
+}
+
+.column {
+    margin-top: 100px;
+    bottom: 0px;
+}
+
+#accountMain {
+    bottom: 0px;
+    background: url("../images/AccountBackground2.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+#accountMain h1 {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 64px;
+}
+
+#accountMain h2 {
+    text-align: center;
+    margin-top: 0px;
+    font-size: 32px;
+}
+
+.container {
+    position: absolute;
+    top: 36px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.row {
+    width: 90%;
+    height: 30%;
+    margin: 8% 5% 8% 5%;
+}
+
+.col {
+    width: 30%;
+    height: 100%;
+    margin-right: 3%;
+    float: left;
+}
+
+.image {
+    height: auto;
+    width: 100%;
+}
+
+.image:hover {
+    opacity: 0.8;
+}
+
+.search {
+    background-color: #BBB9B9;
+    border-radius: 4px;
+    background: -webkit-linear-gradient(180deg, #BFBFBF, #F2F2F2); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(180deg, #BFBFBF, #F2F2F2); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(180deg, #BFBFBF, #F2F2F2); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(180deg, #BFBFBF, #F2F2F2); /* Standard syntax */
+}
+
+.search:hover {
+    opacity: 0.8;
+}
+
+.room_type {
+    font-family: 'ostrich_sansmedium', Arial, sans-serif;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    font-size: 36px;
+}
+
+.room_filters {
+    padding-left: 10px;
+    font-size: 20px;
+}

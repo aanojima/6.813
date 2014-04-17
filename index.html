@@ -12,9 +12,12 @@ Studio Section: Connie 12pm
     <head>
         <title>UCHI</title>
         <!-- Styles -->
+        <link rel="stylesheet" type="text/css" href="font/ostrich/stylesheet.css" />
+        <link rel="stylesheet" type="text/css" href="font/Aaargh/stylesheet.css" />
         <link rel="stylesheet" type="text/css" href="styles/master.css" />
         <link rel="stylesheet" type="text/css" href="styles/index.css" />
         <!-- JavaScript -->
+        <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
     </head>
     
@@ -29,11 +32,33 @@ Studio Section: Connie 12pm
                 <div class="navbar-button">Sign Up</div>
             </div>
         </div>
+        
         <!-- Main content -->
-        <div id="main" class="main-content">
-            <div id="logo">
+        <div class="main-content">
+            <div id="main">
+                <h1>UCHI</h1>
+                <div id="searchbox">
+                    <span class="bold">I want inspiration for my </span>
+                    <select id="inp_room" class="input-large">
+                        <option value="Living_Room">Living Room</option>
+                        <option value="Kitchen">Kitchen</option>
+                        <option value="Bedroom">Bedroom</option>
+                        <option value="Bathroom">Bathroom</option>
+                    </select>
+                    <button id="inp_submit" type="submit" class="button bold">Go &raquo;</button>
+                </div>
+            </div>
+            <div id="about">
+                <h1>What is UCHI?</h1>
+                Uchi is a curated source for interior design inspiration. Whether you just moved into your first apartment or you're styling your next house, the designers at Uchi can help you find the design ideas that are right for you.
+                <h1>Where do I start?</h1>
+                To get started, simply select the room you want to design above and hit Go - you'll instantly see many ideas that you can filter based on multiple criteria. You don't need an account, but if you want to save your favorite designs and remember past searches, you can sign up for free!
             </div>
         </div>
         
+        <!-- Footer -->
+        <div id="footer">
+            Uchi 2014. Created by Eric Schmidt, Nayeon Kim, Aaron Nojima, and Eugene Oh
+        </div>
     </body>
 </html>

@@ -1,8 +1,81 @@
 /* index.css for Uchi */
 
+h1 {
+    font-family: 'ostrich_sansmedium';
+}
+
 #main {
-    bottom: 0px;
-    background: url("../images/main.jpg");
+    /* position & size */
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 300px;
+    padding: 50px;
+    z-index: 1;
+    /* background */
+    background: url("../images/Design1.jpg");
     background-size: cover;
     background-position: center;
+    /* text */
+    color: #FFFFFF;
+}
+
+#main h1 {
+    /* position */
+    margin-top: 48px;
+    /* text */
+    text-align: center;
+    text-shadow: 0px 0px 10px #000000;
+    font-size: 128px;
+}
+
+#searchbox {
+    /* position & size */
+    position: absolute;
+    top: 250px;
+    left: 0px;
+    right: 0px;
+    padding: 10px;
+    /* text */
+    text-align: center;
+    /* background */
+    background: rgba(0,0,0,.5);
+}
+
+#about {
+    /* position & size */
+    position: absolute;
+    top: 400px;
+    left: 0px;
+    right: 0px;
+    height: 200px;
+    padding: 20px 50px 20px 50px;
+    z-index: 2;
+    /* background */
+    background-color: #EEEEEE;
+    box-shadow: 0px 0px 2px #555555;
+    /* text */
+    color: #000000;
+}
+
+#about h1 {
+    /* text */
+    font-size: 24px;
+}
+
+#footer {
+    /* position & size */
+    position: absolute;
+    top: 700px;
+    left: 0px;
+    right: 0px;
+    padding-top: 10px;
+    z-index: 0;
+    /* background */
+    background: #CCCCCC;
+    /* text */
+    font-size: 11px;
+    text-align: center;
+    color: #000000;
 }
