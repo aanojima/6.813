@@ -11,10 +11,21 @@ body {
 	width : 300px;
 	border-right : black solid 2px;
 }
+#logo,#navbar-left{
+	height:64px;
+}
+#logo{
+	float:left;
+}
 .navbar-brand{
 	font-family: 'ostrich_sansmedium';
 	font-size: 35px;
 	border-bottom: black solid 2px;
+	height:64px;
+	float:left;
+}
+.navbar-left{
+	cursor:pointer;
 }
 .result-title{
 	text-align: center;
