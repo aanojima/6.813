@@ -64,7 +64,7 @@ function ResultsController($scope){
 	}
 
 	// For the luls
-	deployTheAlgorithm = function(data){
+	var deployTheAlgorithm = function(data){
 		$scope.applyFilters(data);
 	}
 
@@ -102,7 +102,7 @@ function ResultsController($scope){
 
 		passUrlVar = function(id) {
 			var query = '?id=' + String(id);
-			window.location.href = window.location.protocol + '//' + 
+			window.location.href = window.location.protocol + '://' + 
 				window.location.host + 
 				'result' + 
 				query;
@@ -147,14 +147,18 @@ function ResultsController($scope){
 		for (var i in args.c){
 			var color = $scope.filters.colors[i];
 			$(".color_option[value='"+color+"']").attr("checked", true);
-			$(".color_option[value='"+color+"']").css({border : "solid blue 2px"});
+			if (color == "Black"){
+				$(".color_option[value='"+color+"']").css({border : "solid gray 2px"});
+			} else {
+				$(".color_option[value='"+color+"']").css({border : "solid 2px"});	
+			}
 		}
 
 		// Update Style Filter View
 		for (var i in args.s){
 			var style = $scope.filters.styles[i];
 			$(".style_option[value='"+style+"']").attr("checked", true);
-			$(".style_option[value='"+style+"']").css({border : "solid blue 2px"});
+			$(".style_option[value='"+style+"']").css({border : "solid 2px"});
 		}
 
 		// Create Budget Slider View
@@ -211,7 +215,11 @@ function ResultsController($scope){
 			if (checked){
 				// Disable and Remove from Filters
 				$(this).attr("checked", false);
-				$(this).css({border : "solid black 2px"})
+				if (color == "Black"){
+					$(this).css({border : "dotted gray 2px"});
+				} else {
+					$(this).css({border : "dotted 2px"});
+				}
 				var index = $scope.filters.colors.indexOf(color);
 				if (index > -1){
 					$scope.filters.colors.splice(index, 1);
@@ -219,7 +227,11 @@ function ResultsController($scope){
 			} else {
 				// Enable and Add to Filters
 				$(this).attr("checked", true);
-				$(this).css({border : "solid blue 2px"});
+				if (color == "Black"){
+					$(this).css({border : "solid gray 2px"});
+				} else {
+					$(this).css({border : "solid 2px"});
+				}
 				$scope.filters.colors.push(color);
 			}
 			$scope.newSearch();
@@ -232,7 +244,7 @@ function ResultsController($scope){
 			if (checked){
 				// Disable and Remove from Filters
 				$(this).attr("checked", false);
-				$(this).css({border : "solid black 2px"})
+				$(this).css({border : "dotted 2px"})
 				var index = $scope.filters.styles.indexOf(style);
 				if (index > -1){
 					$scope.filters.styles.splice(index, 1);
@@ -240,7 +252,7 @@ function ResultsController($scope){
 			} else {
 				// Enable and Add to Filters
 				$(this).attr("checked", true);
-				$(this).css({border : "solid blue 2px"})
+				$(this).css({border : "solid 2px"})
 				$scope.filters.styles.push(style);
 			}
 		});
