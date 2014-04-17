@@ -31,7 +31,11 @@ body {
 	display : inline-block;
 	margin-top : 20px;
 	margin-bottom: 20px;
+}
 
+.search-filter h1 {
+    margin: 2px;
+    font-size: 24px;
 }
 
 .search-filter select {
@@ -48,13 +52,13 @@ body {
 .result_header {
 	position: fixed;
 	z-index: 50;
-	top: 64px;
+	top: 40px;
 	left: 300px;
 	right: 0px;
 	height: 100px;
 	background-color: #F0F0F0;
 	text-align: center;
-	font-size: 70;
+	font-size: 32px;
 	box-shadow: 2px 2px 4px #ddd;
 	-moz-box-shadow: 2px 2px 4px #ddd;
 	-webkit-box-shadow: 2px 2px 4px #ddd;

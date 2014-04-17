@@ -110,6 +110,10 @@ function ResultsController($scope){
 
 	// Model-View Handler
 	$(document).ready(function(){
+        
+        $(".navbar-left").click(function(e) {
+            window.location.href = "index.html";
+        });
 
 		getUrlVars = function() {
 			var vars = [], hash;
