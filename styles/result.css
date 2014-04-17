@@ -11,12 +11,12 @@ body {
 	width : 300px;
 	border-right : black solid 2px;
 }
-.navbar-brand{
+.navbar-brand {
 	font-family: 'ostrich_sansmedium';
 	font-size: 35px;
 	border-bottom: black solid 2px;
 }
-.result-title{
+.result-title {
 	text-align: center;
 	height: 70px;
 	width:100%;
@@ -27,7 +27,7 @@ body {
 	border-top: black solid 1px;
 	
 }
-.result-designer{
+.result-designer {
 	height:60px;
 	width:100%;
 	line-height:60px;
@@ -36,36 +36,32 @@ body {
 	border-bottom:black solid 2px;
 	font-size: 28px;
 }
-.result-description{
+.result-description {
 	height:400px;
 	width:100%;
 	line-height:50px;
 	padding:2px;
-	font-family:"Aaargh";
 }
-#login-button, #signup-button{
-	font-family: "Aaargh";
+
+#buttons {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
 }
-#buy-button{
-	position:fixed;
-	padding:0;
-	height:60px;
-	width:inherit;
-	margin-left:2px;
-	margin-right:2px;
-	text-align:center;
-	line-height: 60px;
-	background-color: #E8E8E8;
-	font-family: "Aaargh";
-	bottom:2px;
+
+#buttons .button {
+    width: 100%;
+    text-align: center;
+    padding: 8px 0px 8px 0px;
+    margin-bottom: 2px;
+    border-radius: 0px;
 }
-#buy-button:active{
-	background-color: #E3E3E3;
-}
-#main{
+
+#main {
 	height:500px;
 }
-.main-content{
+.main-content {
 	float:left;
 	position:fixed;
 	top: 65px;
