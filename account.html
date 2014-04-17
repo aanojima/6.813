@@ -21,7 +21,8 @@ Studio Section: Connie 12pm
         <link rel="stylesheet" type="text/css" href="styles/account.css" />
         
         <!-- JavaScript -->
-        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="js/account.js"></script>
     </head>
     
     <body>
@@ -32,14 +33,15 @@ Studio Section: Connie 12pm
                 <div class="navbar-brand">&nbsp;UCHI</div>
             </div>
             <div class="navbar-right">
-                <div class="navbar-button">Log In</div>
-                <div class="navbar-button">Sign Up</div>
+                <div class="navbar-text">Hi, User!</div>
+                <div class="navbar-button" id="btn-search">New Search</div>
+                <div class="navbar-button">Log Out</div>
             </div>
         </div>
         
         <!-- Main content -->
         <div id="accountMain" class="main-content">
-            <h1>Overview</h1>
+            <h1>My Account</h1>
         
             <!-- Liked Designs Left Column -->
             <div id="liked" class="column-left column">

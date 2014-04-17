@@ -113,8 +113,14 @@ function ResultsController($scope){
 	// Model-View Handler
 	$(document).ready(function(){
         
+        // Goes back to the homepage when the brand is clicked
         $(".navbar-left").click(function(e) {
             window.location.href = "index.html";
+        });
+        
+        // "My Account" button event handler
+        $("#btn-account").click(function(e) {
+            window.location.href = "account.html";
         });
 
 		getUrlVars = function() {
