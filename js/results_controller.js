@@ -148,17 +148,22 @@ function ResultsController($scope){
 			var color = $scope.filters.colors[i];
 			$(".color_option[value='"+color+"']").attr("checked", true);
 			if (color == "Black"){
-				$(".color_option[value='"+color+"']").css({border : "solid gray 2px"});
+				// $(".color_option[value='"+color+"']").css({border : "solid gray 2px"});
+				$(".color_option[value='"+color+"']").html(color+"<br><img src='images/white-check.png'/>");
 			} else {
-				$(".color_option[value='"+color+"']").css({border : "solid 2px"});	
+				// $(".color_option[value='"+color+"']").css({border : "solid 2px"});
+				$(".color_option[value='"+color+"']").html(color+"<br><img src='images/black-check.png'/>");
 			}
+			$(".color_option[value='"+color+"']").addClass("filter_option_selected");
 		}
 
 		// Update Style Filter View
 		for (var i in args.s){
 			var style = $scope.filters.styles[i];
 			$(".style_option[value='"+style+"']").attr("checked", true);
-			$(".style_option[value='"+style+"']").css({border : "solid 2px"});
+			// $(".style_option[value='"+style+"']").css({border : "solid 2px"});
+			$(".style_option[value='"+style+"']").html(style+"<br><img src='images/black-check.png'/>");
+			$(".style_option[value='"+style+"']").addClass("filter_option_selected");
 		}
 
 		// Create Budget Slider View
@@ -216,10 +221,12 @@ function ResultsController($scope){
 				// Disable and Remove from Filters
 				$(this).attr("checked", false);
 				if (color == "Black"){
-					$(this).css({border : "dotted gray 2px"});
+					// $(this).css({border : "dotted gray 2px"});
 				} else {
-					$(this).css({border : "dotted 2px"});
+					// $(this).css({border : "dotted 2px"});
 				}
+				$(this).html(color+"<br>");
+				$(this).removeClass("filter_option_selected");
 				var index = $scope.filters.colors.indexOf(color);
 				if (index > -1){
 					$scope.filters.colors.splice(index, 1);
@@ -228,10 +235,13 @@ function ResultsController($scope){
 				// Enable and Add to Filters
 				$(this).attr("checked", true);
 				if (color == "Black"){
-					$(this).css({border : "solid gray 2px"});
+					// $(this).css({border : "solid gray 2px"});
+					$(this).html(color+"<br><img src='images/white-check.png'/>");
 				} else {
-					$(this).css({border : "solid 2px"});
+					// $(this).css({border : "solid 2px"});
+					$(this).html(color+"<br><img src='images/black-check.png'/>");
 				}
+				$(this).addClass("filter_option_selected");
 				$scope.filters.colors.push(color);
 			}
 			$scope.newSearch();
@@ -244,16 +254,20 @@ function ResultsController($scope){
 			if (checked){
 				// Disable and Remove from Filters
 				$(this).attr("checked", false);
-				$(this).css({border : "dotted 2px"})
+				// $(this).css({border : "dotted 2px"})
 				var index = $scope.filters.styles.indexOf(style);
 				if (index > -1){
 					$scope.filters.styles.splice(index, 1);
 				}
+				$(this).html(style+"<br>");
+				$(this).removeClass("filter_option_selected");
 			} else {
 				// Enable and Add to Filters
 				$(this).attr("checked", true);
-				$(this).css({border : "solid 2px"})
+				// $(this).css({border : "solid 2px"})
 				$scope.filters.styles.push(style);
+				$(this).html(style+"<br><img src='images/black-check.png'/>");
+				$(this).addClass("filter_option_selected");
 			}
 		});
 		$scope.newSearch();

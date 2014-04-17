@@ -25,13 +25,23 @@ body {
 
 .search-filter {
 	width : 100%;
-	height : 25%;	
+	height : auto;
 	text-align : center;
+	display : inline-block;
+	margin-top : 20px;
+	margin-bottom: 20px;
+
 }
 
 .search-filter select {
 	margin : auto;
 	width : 250px;
+	box-shadow: 2px 2px 4px #ddd;
+	-moz-box-shadow: 2px 2px 4px #ddd;
+	-webkit-box-shadow: 2px 2px 4px #ddd;
+	border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
 }
 
 .result_header {
@@ -86,7 +96,7 @@ body {
 	width : 100%;
 }
 
-.color_option {
+.filter_option {
 	position : relative;
 	float : left;
 	display : inline-block;
@@ -95,48 +105,53 @@ body {
 	max-height: 20%;
 	max-width: 30%;
 	margin : 5px;
-	border : dotted 2px;
-	box-shadow: 2px 2px 4px #ddd;
+	border : solid 2px;
+	box-shadow: 2px 3px 5px #000;
+	-moz-box-shadow: 2px 3px 5px #000;
+	-webkit-box-shadow: 2px 3px 5px #000;
+	/*box-shadow: 2px 2px 4px #ddd;
 	-moz-box-shadow: 2px 2px 4px #ddd;
-	-webkit-box-shadow: 2px 2px 4px #ddd;
+	-webkit-box-shadow: 2px 2px 4px #ddd;*/
 	border-radius: 5px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     cursor:pointer;
+    -webkit-user-select: none; /* Chrome/Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+ */
+}
+
+.filter_option img {
+	display: inline-block;
+	margin : auto;
+	width : 50%;
+	height : 50%;
+}
+
+.filter_option_selected {
+	position:relative;
+	top:3px;
+	left:2px;
+	box-shadow:none;
+	-moz-box-shadow:none;
+	-webkit-box-shadow:none;
 }
 
 #black_color {
 	color : white;
-	border-color : gray;
+	border-color : black;
 }
 
-.style_option {
-	position : relative;
-	float : left;
-	display: inline-block;
-	height : 60px;
-	width : 60px;
-	max-height: 20%;
-	max-width: 30%;
-	margin : 5px;
-	border : dotted 2px;
-	box-shadow: 2px 2px 4px #ddd;
-    -moz-box-shadow: 2px 2px 4px #ddd;
-    -webkit-box-shadow: 2px 2px 4px #ddd;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    cursor:pointer;
+.budget-label {
+	margin-top: 10px;
 }
 
 #min-budget {
-	/*float : left;*/
 	position: absolute;
 	left: 25px;
 }
 
 #max-budget {
-	/*float : right;*/
 	position: absolute;
 	right : 25px;
 }
