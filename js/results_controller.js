@@ -1,6 +1,7 @@
 function ResultsController($scope){
 
-	$scope.results = ["Wow", "Such Design", "Many Results", "Very Impressive", "Eric", "Nayeon", "Eugene", "Noj"];
+	// $scope.results = ["Wow", "Such Design", "Many Results", "Very Impressive", "Eric", "Nayeon", "Eugene", "Noj"];
+	$scope.results = window.data;
 
 	$scope.options = {
 		rooms : ["Living Room", "Kitchen", "Bedroom", "Bathroom"],
@@ -18,15 +19,15 @@ function ResultsController($scope){
 		},
 	};
 
+	// TODO for filters with nothing selected
 	$scope.applyFilters = function(data){
-		delete $scope.results;
-		$scope.results = [];
+		$scope.results = {};
 		for (var id in data){
 			if (!data[id]){
 				break;
 			}
 			var result = data[id];
-			if (result.filters.room != $scope.filters.rooms){
+			if ($scope.filters.room && result.filters.room != $scope.filters.room){
 				continue;
 			}
 			if (result.filters.price < $scope.filters.budget.min ||
@@ -39,11 +40,11 @@ function ResultsController($scope){
 				var style = result.filters.styles[i];
 				var index = $scope.filters.styles.indexOf(style);
 				if (index > -1){
-					styleMatch = true;
+					styleNotFound = false;
 					break;
 				}
 			}
-			if (!styleNotFound){
+			if ($scope.filters.styles.length > 0 && styleNotFound){
 				continue;
 			}
 			// matching color
@@ -56,10 +57,28 @@ function ResultsController($scope){
 					break;
 				}
 			}
-			if (!colorNotFound){
+			if ($scope.filters.colors.length > 0 && colorNotFound){
 				continue;
 			}
-			$scope.results.push(result);
+			$scope.results[id] = result;
+		}
+		$scope.updateResultsView();
+	}
+
+	$scope.updateResultsView = function(){
+		var result_grid = $(".result_grid")[0];
+		result_grid.innerHTML = "";
+		for (var i in $scope.results){
+			var result = $scope.results[i];
+			var div = document.createElement('div');
+			div.className = "result";
+			var text = document.createElement('b');
+			text.innerHTML = result.information.name;
+			var img = document.createElement('img');
+			img.src = result.information.image;
+			result_grid.appendChild(div);
+			div.appendChild(text);
+			div.appendChild(img);
 		}
 	}
 
@@ -68,16 +87,16 @@ function ResultsController($scope){
 		$scope.applyFilters(data);
 	}
 
-	$scope.newSearch = function(){
-		var results;
+	var deployDummyAlgorithm = function(){
+		$scope.applyFilters(window.data);
+	}
 
+	$scope.newSearch = function(){
 		$.ajax({
 			method : "POST",
-			url : "data.json", // TODO
+			url : "js/data.json", // TODO
 			success : deployTheAlgorithm,
-			error : function(error){
-				console.log("XMLHttpRequest Error");
-			}
+			error : deployDummyAlgorithm,
 		});
 	}
 
@@ -102,10 +121,7 @@ function ResultsController($scope){
 
 		passUrlVar = function(id) {
 			var query = '?id=' + String(id);
-			window.location.href = window.location.protocol + '://' + 
-				window.location.host + 
-				'result' + 
-				query;
+			window.location.href = 'result.html' + query;
 		}
 
 		// Search by URL Query
@@ -139,6 +155,7 @@ function ResultsController($scope){
 				$scope.filters.budget.max = bmax;
 			}
 		}
+		$scope.applyFilters($scope.results);
 
 		// Update Room Filter View
 		$(".filter-room select").val($scope.filters.room);
@@ -269,8 +286,9 @@ function ResultsController($scope){
 				$(this).html(style+"<br><img src='images/black-check.png'/>");
 				$(this).addClass("filter_option_selected");
 			}
+			$scope.newSearch();
 		});
-		$scope.newSearch();
+		
 	});
 
 }

@@ -5,7 +5,7 @@
 		<meta charset="UTF-8">
 		<title>Results | UCHI</title>
 		<!-- Javascript Libraries -->
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="js/jquery.min.js"></script>
 		<script src="js/jquery-ui.js"></script>
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.5/angular.min.js"></script>
 		<!-- Stylesheets -->
@@ -16,6 +16,8 @@
 		<link rel="stylesheet" type="text/css" href="styles/jquery-ui.css" />
 		<!-- Javascripts -->
 		<script type="text/javascript" src="js/results_controller.js"></script>
+		<!-- DATA -->
+		<script type="text/javascript" src="js/data.json"></script>
 	</head>
 	<body ng-controller="ResultsController">
 		<div class="navbar">
@@ -52,10 +54,10 @@
 			<div class="result_header">Find Designs</div>
 			<div class="result_grid">
 				<div class="result" ng-repeat="result in results">
-					<b>{{result}}</b>
-					<img src="http://gallery.photo.net/photo/2241657-md.jpg"/>
-					<!-- <b>{{result.information.name}}</b> -->
-					<!-- <img src="{{result.information.image}}"/> -->
+					<!-- <b>{{result}}</b> -->
+					<!-- <img src="http://gallery.photo.net/photo/2241657-md.jpg"/> -->
+					<b>{{result.information.name}}</b>
+					<img src="{{result.information.image}}"/>
 				</div>
 			</div>
 		</div>
