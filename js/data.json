@@ -10,7 +10,7 @@ window.data = {
             name: "Clean Cotton",
             image: "images/White_LR.jpg",
             designer: "Eugene Oh",
-            description: "InspiRed by an oceanfront cabin, this livingroom offers a simple, refreshing balance of oak and White linen." 
+            description: "Inspired by an oceanfront cabin, this living room offers a simple, refreshing balance of oak and White linen." 
         }   
     },
     

@@ -31,28 +31,28 @@
 	    </div>
 		<div class="sidebar" ng-model="filters">
 			<div class="search-filter filter-room">
-				<div><b>ROOM</b></div>
+				<h1>Room</h1>
 				<select>
 					<option ng-selected="selected" name="Any">Any</option>
 					<option ng-model="room" ng-repeat="room in options.rooms" name="{{room}}">{{room}}</option>
 				</select>
 			</div>
 			<div class="search-filter filter-color" ng-model="colors">
-					<div><b>COLOR</b></div>
+					<h1>Color</h1>
 					<div id="{{color}}_color" style="background-color:{{color}}" class="color_option filter_option" value="{{color}}" ng-repeat="color in options.colors">{{color}}<br></div>
 			</div>
 			<div class="search-filter filter-style" ng-model="styles">
-				<div><b>STYLE</b></div>
+				<h1>Style</h1>
 				<div id="{{style}}_style" class="style_option filter_option" value="{{style}}" ng-repeat="style in options.styles">{{style}}<br></div>
 			</div>
 			<div class="search-filter filter-budget" ng-model="budget">
-				<div><b>BUDGET</b></div><br>
+				<h1>Budget</h1><br>
 				<div id="budget_slider"></div>
 				<div class="budget-label"><div id="min-budget">Min: 0</div><div id="max-budget">Max: 5000</div></div>
 			</div>
 		</div>
 		<div class="main_content">
-			<div class="result_header">Find Designs</div>
+			<div class="result_header"><h1>Find Designs</h1></div>
 			<div class="result_grid">
 				<div class="result" ng-repeat="result in results">
 					<!-- <b>{{result}}</b> -->
