@@ -1,3 +1,5 @@
+var passUrlVar;
+
 function ResultsController($scope){
 
 	$scope.results = ["Wow", "Such Design", "Many Results", "Very Impressive", "Eric", "Nayeon", "Eugene", "Noj"];
@@ -18,49 +20,137 @@ function ResultsController($scope){
 		},
 	};
 
-	$scope.newSearch = function(){
-		// TODO - Update this.results
-		alert("HEY");
-	}
-
 	// Model-View Handler
 	$(document).ready(function(){
 
-		// Budget Slider Widget
+		getUrlVars = function() {
+			var vars = [], hash;
+			var hashes = window.location.href.slice(
+					window.location.href.indexOf('?') + 1).split('&');
+			for ( var i = 0; i < hashes.length; i++) {
+				hash = hashes[i].split('=');
+				vars.push(hash[0]);
+				vars[hash[0]] = hash[1];
+			}
+			return vars;
+		};
+
+		getUrlVar = function(name) {
+			return getUrlVars()[name];
+		};
+
+		passUrlVar = function(id) {
+			var query = '?id=' + String(id);
+			window.location.href = window.location.protocol + '//' + 
+				window.location.host + 
+				'result' + 
+				query;
+		}
+
+		// Search by URL Query
+		var args = getUrlVars();
+		if (args.r){
+			$scope.filters.room = args.r.replace('_', ' ');
+		}
+		if (args.c){
+			var color_array = args.c.split(',');
+			for (var i in color_array){
+				color_array[i] = color_array[i].replace('_', ' ');
+			}
+			$scope.filters.colors = color_array;
+		}
+		if (args.s){
+			var style_array = args.s.split(',');
+			for (var i in style_array){
+				style_array[i] = style_array[i].replace('_', ' ');
+			}
+			$scope.filters.styles = style_array;
+		}
+		if (args.bmin){
+			var bmin = parseInt(args.bmin);
+			if (bmin >= 0 && bmin <= 5000){
+				$scope.filters.budget.min = bmin;
+			}
+		}
+		if (args.bmax){
+			var bmax = parseInt(args.bmax);
+			if (bmax >= 0 && bmax <= 5000){
+				$scope.filters.budget.max = bmax;
+			}
+		}
+
+		// Update Room Filter View
+		$(".filter-room select").val($scope.filters.room);
+
+		// Update Color Filter View
+		for (var i in args.c){
+			var color = $scope.filters.colors[i];
+			$(".color_option[value='"+color+"']").attr("checked", true);
+			$(".color_option[value='"+color+"']").css({border : "solid blue 2px"});
+		}
+
+		// Update Style Filter View
+		for (var i in args.s){
+			var style = $scope.filters.styles[i];
+			$(".style_option[value='"+style+"']").attr("checked", true);
+			$(".style_option[value='"+style+"']").css({border : "solid blue 2px"});
+		}
+
+		// Create Budget Slider View
 		$("#budget_slider").slider({
 			range: true,
 			min: 0,
 			max: 5000,
-			values: [0, 5000],
-			// Update Budget
+			values: [$scope.filters.budget.min, $scope.filters.budget.max],
+			// Update Budget on Change
+			slide : function( event, ui ) {
+				var min = ui.values[0];
+				var max = ui.values[1];
+				if (ui.value == min){
+					// Update Min
+					$scope.filters.budget.min = min;
+					$("#min-budget").text("Min: " + String(min));
+				} else {
+					// Update Max
+					$scope.filters.budget.max = max;
+					$("#max-budget").text("Max: " + String(max));
+				}
+			},
 			stop: function( event, ui ) {
 				var min = ui.values[0];
 				var max = ui.values[1];
 				if (ui.value == min){
 					// Update Min
 					$scope.filters.budget.min = min;
+					$("#min-budget").text("Min: " + String(min));
 				} else {
 					// Update Max
 					$scope.filters.budget.max = max;
+					$("#max-budget").text("Max: " + String(max));
 				}
+				// TODO
 			}
 		});
+
+		// Update Budget Slider View
+		$("#min-budget").text("Min: " + String($scope.filters.budget.min));
+		$("#max-budget").text("Max: " + String($scope.filters.budget.max));
 		
-		// Update Room
+		// Update Room on Change
 		$(".filter-room select").on("change", function(event){
-			var index = $(".search-filter option:selected").val();
-			var room = $scope.options.rooms[index];
+			var room = $(".search-filter option:selected").val();
 			$scope.filters.room = room;
+			// TODO
 		});
 
-		// Update Colors
+		// Update Colors on Change
 		$(".color_option").on("click", function(event){
 			var color = $(this).attr("value");
 			var checked = $(this).attr("checked");
 			if (checked){
 				// Disable and Remove from Filters
 				$(this).attr("checked", false);
-				$(this).css({border : "solid black 1px"})
+				$(this).css({border : "solid black 2px"})
 				var index = $scope.filters.colors.indexOf(color);
 				if (index > -1){
 					$scope.filters.colors.splice(index, 1);
@@ -68,19 +158,20 @@ function ResultsController($scope){
 			} else {
 				// Enable and Add to Filters
 				$(this).attr("checked", true);
-				$(this).css({border : "solid blue 1px"})
+				$(this).css({border : "solid blue 2px"});
 				$scope.filters.colors.push(color);
 			}
+			// TODO
 		});
 
-		// Update Styles
+		// Update Styles on Change
 		$(".style_option").on("click", function(event){
 			var style = $(this).attr("value");
 			var checked = $(this).attr("checked");
 			if (checked){
 				// Disable and Remove from Filters
 				$(this).attr("checked", false);
-				$(this).css({border : "solid black 1px"})
+				$(this).css({border : "solid black 2px"})
 				var index = $scope.filters.styles.indexOf(style);
 				if (index > -1){
 					$scope.filters.styles.splice(index, 1);
@@ -88,11 +179,11 @@ function ResultsController($scope){
 			} else {
 				// Enable and Add to Filters
 				$(this).attr("checked", true);
-				$(this).css({border : "solid blue 1px"})
+				$(this).css({border : "solid blue 2px"})
 				$scope.filters.styles.push(style);
 			}
 		});
-
+		// TODO
 	});
 
 }

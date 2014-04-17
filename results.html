@@ -26,9 +26,11 @@
 	        </div>
 	    </div>
 		<div class="sidebar" ng-model="filters">
-			<div class="search-filter filter-room" ng-model="room">
+			<div class="search-filter filter-room">
 				<div><b>ROOM</b></div>
-				<select ng-options="room for room in options.rooms"></select>
+				<select>
+					<option ng-model="room" ng-repeat="room in options.rooms" name="{{room}}">{{room}}</option>
+				</select>
 			</div>
 			<div class="search-filter filter-color" ng-model="colors">
 				<div style="height:100%">
@@ -41,7 +43,8 @@
 				<div id="{{style}}_style" class="style_option" value="{{style}}" ng-repeat="style in options.styles">{{style}}</div>
 			</div>
 			<div class="search-filter filter-budget" ng-model="budget">
-				<div><b>BUDGET</b></div>
+				<div><b>BUDGET</b></div><br>
+				<div><div id="min-budget">Min: 0</div><div id="max-budget">Max: 5000</div></div>
 				<div id="budget_slider"></div>
 			</div>
 		</div>

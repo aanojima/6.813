@@ -26,6 +26,11 @@ body {
 	text-align : center;
 }
 
+.search-filter select {
+	margin : auto;
+	width : 250px;
+}
+
 .result_header {
 	position: fixed;
 	z-index: 50;
@@ -82,7 +87,7 @@ body {
 	max-height: 20%;
 	max-width: 30%;
 	margin : 5px;
-	border : solid black 1px;
+	border : solid black 2px;
 }
 
 #black_color {
@@ -98,5 +103,17 @@ body {
 	max-height: 20%;
 	max-width: 30%;
 	margin : 5px;
-	border : solid black 1px;
+	border : solid black 2px;
+}
+
+#min-budget {
+	/*float : left;*/
+	position: absolute;
+	left: 25px;
+}
+
+#max-budget {
+	/*float : right;*/
+	position: absolute;
+	right : 25px;
 }
