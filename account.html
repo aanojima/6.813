@@ -15,14 +15,9 @@ Studio Section: Connie 12pm
     <head>
         <title> Account | UCHI </title>
         <!-- Styles -->
+        <link rel="stylesheet" type="text/css" href="font/ostrich/stylesheet.css" />
         <link rel="stylesheet" type="text/css" href="styles/master.css" />
         <link rel="stylesheet" type="text/css" href="styles/account.css" />
-
-        <style type="text/css">
-            body{
-                font-family: 'ostrich_sansmedium';
-				}
-		</style>
         
         <!-- JavaScript -->
         <script type="text/javascript" src="js/index.js"></script>
@@ -43,15 +38,12 @@ Studio Section: Connie 12pm
         
         <!-- Main content -->
         <div id="accountMain" class="main-content">
-            <div id="Overview">
-                Overview
-            </div>
-        
+            <h1>Overview</h1>
         
             <!-- Liked Designs Left Column -->
             <div id="liked" class="column-left column">
-                <h1>Liked Designs</h1>
-                <div id="likedbox">
+                <h2>Liked Designs</h2>
+                <div id="likedbox" class="container">
                     <div class="row">
                         <div class="col">
                             <img src="images/sample_a.gif" alt="sample A" class="image">
@@ -85,40 +77,43 @@ Studio Section: Connie 12pm
                             <img src="images/sample_d.jpg" alt="sample E" class="image">
                         </div>
                     </div>
-                </div>  
+                </div>
             </div>
-            
+            <!-- End left column -->
             
             <!-- Past Searches on Right Column -->
             <div id="past" class="column-right column">
-                <h1>Past Searches</h1>
-                <div id="pastbox">
-                <div class="search">
-                         <div class="room_name">Bathroom</div>
-                         <div class="room_descript">Style: Modern <br> Price Range: $500-800</div>
-                     </div>
-                
-                     <div class="search">
-                         <div class="room_name">Living Room</div>
-                         <div class="room_descript">Style: Antique <br> Price Range: $1500-2800</div>
-                     </div>
-                
-                    <div class="search">
-                         <div class="room_name">BedRoom A</div>
-                         <div class="room_descript">Style: Country <br> Price Range: $1500-2800</div>
-                     </div>
-                    <div class="search">
-                         <div class="room_name">BedRoom B</div>
-                         <div class="room_descript">Style: Country <br> Price Range: $800-1200</div>
-                     </div>
-                    <div class="search">
-                         <div class="room_name">BedRoom C</div>
-                         <div class="room_descript">Style: Country <br> Price Range: $200-700</div>
-                     </div>
-                </div> 
-                  
-                
+                <h2>Past Searches</h2>
+                <div id="pastbox" class="container">
+                    <div class="search row">
+                        <div class="room_type">Bathroom</div>
+                        <div class="room_filters">
+                            Colors: Red, Gray<br>
+                            Style: Modern<br>
+                            Price Range: $500-800
+                        </div>
+                    </div>
+                    <div class="search row">
+                        <div class="room_type">Living Room</div>
+                        <div class="room_filters">
+                            Colors: Orange, White<br>
+                            Style: Basic<br>
+                            Price Range: $800-1200
+                        </div>
+                    </div>
+                    <div class="search row">
+                        <div class="room_type">Bedroom</div>
+                        <div class="room_filters">
+                            Colors: Yellow<br>
+                            Style: Antique<br>
+                            Price Range: $600-1000
+                        </div>
+                    </div>
+                </div>
             </div>
+            <!-- End right column -->
+            
         </div>
+        
     </body>
 </html>
