@@ -3,7 +3,8 @@ body {
 }
 
 .sidebar {
-	overflow : hidden;
+	/*overflow-x : scroll;*/
+	/*overflow-y : hidden;*/
 	position : fixed;
 	top : 64px;
 	bottom : 0px;
@@ -106,6 +107,7 @@ body {
 	max-width: 30%;
 	margin : 5px;
 	border : solid 2px;
+	font-size : 12px;
 	box-shadow: 2px 3px 5px #000;
 	-moz-box-shadow: 2px 3px 5px #000;
 	-webkit-box-shadow: 2px 3px 5px #000;

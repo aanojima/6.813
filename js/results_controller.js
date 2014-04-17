@@ -132,6 +132,9 @@ function ResultsController($scope){
 			window.location.href = 'result.html' + query;
 		}
 
+		// Mint Cream
+		$("#MintCream_color").text("Cream");
+
 		// Search by URL Query
 		var args = getUrlVars();
 		if (args.r){
