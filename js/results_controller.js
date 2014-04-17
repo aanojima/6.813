@@ -4,13 +4,13 @@ function ResultsController($scope){
 	$scope.results = window.data;
 
 	$scope.options = {
-		rooms : ["", "Living Room", "Kitchen", "Bedroom", "Bathroom"],
+		rooms : ["Living Room", "Kitchen", "Bedroom", "Bathroom"],
 		colors : ["Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Brown", "Gray", "Black", "White", "MintCream"],
 		styles : ["Antique", "Rustic", "Modern", "Retro", "Romantic", "Simple", "Luxury", "Industrial"],
 	};
 
 	$scope.filters = {
-		room : "",
+		room : "Any",
 		colors : [],
 		styles : [],
 		budget : {
@@ -27,7 +27,9 @@ function ResultsController($scope){
 				break;
 			}
 			var result = data[id];
-			if ($scope.filters.room && result.filters.room != $scope.filters.room){
+			if ($scope.filters.room &&
+				$scope.filters.room != "Any" && 
+				result.filters.room != $scope.filters.room){
 				continue;
 			}
 			if (result.filters.price < $scope.filters.budget.min ||
@@ -168,8 +170,7 @@ function ResultsController($scope){
 		}
 		$scope.applyFilters($scope.results);
 
-		// Update Room Filter View
-		$(".filter-room select").val($scope.filters.room);
+		$(".filter-room select").val($scope.filters.room);	
 
 		// Update Color Filter View
 		for (var i in args.c){

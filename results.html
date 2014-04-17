@@ -33,6 +33,7 @@
 			<div class="search-filter filter-room">
 				<div><b>ROOM</b></div>
 				<select>
+					<option ng-selected="selected" name="Any">Any</option>
 					<option ng-model="room" ng-repeat="room in options.rooms" name="{{room}}">{{room}}</option>
 				</select>
 			</div>
