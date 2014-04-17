@@ -41,6 +41,10 @@ body {
 	width:100%;
 	line-height:50px;
 	padding:2px;
+	font-family:"Aaargh";
+}
+#login-button, #signup-button{
+	font-family: "Aaargh";
 }
 #buy-button{
 	position:fixed;
