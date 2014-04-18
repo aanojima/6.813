@@ -19,12 +19,12 @@
 #accountMain h2 {
     text-align: center;
     margin-top: 0px;
-    font-size: 32px;
+    font-size: 50px;
 }
 
 .container {
     position: absolute;
-    top: 36px;
+    top: 65px;
     left: 0px;
     right: 0px;
     bottom: 0px;
@@ -35,7 +35,7 @@
 .row {
     width: 90%;
     height: 30%;
-    margin: 8% 5% 8% 5%;
+    margin: 4% 5% 12% 5%;
 }
 
 .col {
@@ -54,6 +54,7 @@
     opacity: 0.8;
 }
 
+
 .search {
     background-color: #BBB9B9;
     border-radius: 4px;
@@ -61,6 +62,8 @@
     background: -o-linear-gradient(180deg, #BFBFBF, #F2F2F2); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(180deg, #BFBFBF, #F2F2F2); /* For Firefox 3.6 to 15 */
     background: linear-gradient(180deg, #BFBFBF, #F2F2F2); /* Standard syntax */
+    height: 120px;
+    margin-top: 4%;
 }
 
 .search:hover {
@@ -79,5 +82,5 @@
 .room_filters {
     padding-left: 10px;
     color: #000000;
-    font-size: 20px;
+    font-size: 15px;
 }
