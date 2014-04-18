@@ -61,7 +61,7 @@ window.data = {
 
     04: {
         filters: {
-            room: "Kitchen",
+            room: "Bedroom",
             colors: ["Gray"],
             styles: ["Simple"],
             price: 650,
