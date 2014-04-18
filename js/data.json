@@ -17,7 +17,7 @@ window.data = {
     01: {
         filters: {
             room: "Living Room",
-            colors: ["Purple", "Gray"],
+            colors: ["Purple", "Gray", "Yellow"],
             styles: ["Antique"],
             price: 1100,
         },
