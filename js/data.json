@@ -69,7 +69,7 @@ window.data = {
         information: {
             name: "Relaxation Nation",
             image: "images/sample_b.jpg",
-            designer: "Eric Schmidt",
+            designer: "David D'Achiardi",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet lectus eleifend." 
         }   
     },
