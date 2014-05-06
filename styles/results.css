@@ -8,7 +8,7 @@ body {
 	top : 64px;
 	bottom : 0px;
 	left : 0px;
-	width : 320px;
+	width : 240px;
 	box-shadow : 0px 1px 2px #000000;
 	background-color: #F7F7F7;
 	z-index: 75;
@@ -18,10 +18,14 @@ body {
 	position : absolute;
 	top : 64px;
 	right : 0px;
-	left : 320px;
+	left : 240px;
 	bottom: 0px;
 	min-height: 114px;
 	/*background-color:  #B5B6B6;*/
+	background: -webkit-linear-gradient(#DDF7F7, white); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#DDF7F7, white); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#DDF7F7, white); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#DDF7F7, white); /* Standard syntax */
 }
 
 .search-filter {
@@ -40,7 +44,7 @@ body {
 
 .search-filter select {
 	margin : auto;
-	width : 250px;
+	width : 90%;
 	box-shadow: 2px 2px 4px #ddd;
 	-moz-box-shadow: 2px 2px 4px #ddd;
 	-webkit-box-shadow: 2px 2px 4px #ddd;
@@ -53,10 +57,10 @@ body {
 	position: fixed;
 	z-index: 50;
 	top: 64px;
-	left: 320px;
+	left: 240px;
 	right: 0px;
-	height: 100px;
-	background-color: #F0F0F0;
+	height: 0px;
+	/*background-color: #F0F0F0;*/
 	text-align: center;
 	font-size: 32px;
 	box-shadow: 2px 2px 4px #ddd;
@@ -83,13 +87,13 @@ body {
 	height: 280px;
 	width: 280px;
 	margin : 10px;
-	border : solid black 1px;
+	/*border : solid black 1px;
 	box-shadow: 2px 2px 4px #ddd;
 	-moz-box-shadow: 2px 2px 4px #ddd;
-	-webkit-box-shadow: 2px 2px 4px #ddd;
-	border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
+	-webkit-box-shadow: 2px 2px 4px #ddd;*/
+	/*border-radius: 5px;*/
+    /*-moz-border-radius: 5px;*/
+    /*-webkit-border-radius: 5px;*/
 }
 
 .result img {
@@ -100,7 +104,7 @@ body {
 
 #budget_slider {
 	top : 25%;
-	width : 250px;
+	width : 200px;
 	margin : auto;
 }
 
@@ -114,22 +118,19 @@ body {
 	position : relative;
 	float : left;
 	display : inline-block;
-	height : 60px;
-	width : 60px;
+	height : 45px;
+	width : 45px;
 	max-height: 20%;
 	max-width: 30%;
 	margin : 5px;
-	border : solid 2px;
+	/*border : solid 2px;*/
 	font-size : 12px;
-	box-shadow: 2px 3px 5px #000;
+	/*box-shadow: 2px 3px 5px #000;
 	-moz-box-shadow: 2px 3px 5px #000;
 	-webkit-box-shadow: 2px 3px 5px #000;
-	/*box-shadow: 2px 2px 4px #ddd;
-	-moz-box-shadow: 2px 2px 4px #ddd;
-	-webkit-box-shadow: 2px 2px 4px #ddd;*/
 	border-radius: 5px;
     -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
+    -webkit-border-radius: 5px;*/
     cursor:pointer;
     -webkit-user-select: none; /* Chrome/Safari */        
 	-moz-user-select: none; /* Firefox */
@@ -145,8 +146,8 @@ body {
 
 .filter_option_selected {
 	position:relative;
-	top:3px;
-	left:2px;
+	/*top:3px;*/
+	/*left:2px;*/
 	box-shadow:none;
 	-moz-box-shadow:none;
 	-webkit-box-shadow:none;
@@ -155,6 +156,11 @@ body {
 #black_color {
 	color : white;
 	border-color : black;
+}
+
+.style_option {
+	font-size: 10px;
+	background-color: #EEEFEF;
 }
 
 .budget-label {

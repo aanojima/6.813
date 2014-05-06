@@ -144,9 +144,6 @@ function ResultsController($scope){
 			window.location.href = 'result.html' + query;
 		}
 
-		// Mint Cream
-		$("#MintCream_color").text("Cream");
-
 		// Search by URL Query
 		var args = getUrlVars();
 		if (args.r){
@@ -188,10 +185,10 @@ function ResultsController($scope){
 			$(".color_option[value='"+color+"']").attr("checked", true);
 			if (color == "Black"){
 				// $(".color_option[value='"+color+"']").css({border : "solid gray 2px"});
-				$(".color_option[value='"+color+"']").html(color+"<br><img src='images/white-check.png'/>");
+				$(".color_option[value='"+color+"']").html("<br><img src='images/white-check.png'/>");
 			} else {
 				// $(".color_option[value='"+color+"']").css({border : "solid 2px"});
-				$(".color_option[value='"+color+"']").html(color+"<br><img src='images/black-check.png'/>");
+				$(".color_option[value='"+color+"']").html("<br><img src='images/black-check.png'/>");
 			}
 			$(".color_option[value='"+color+"']").addClass("filter_option_selected");
 		}
@@ -265,7 +262,7 @@ function ResultsController($scope){
 				} else {
 					// $(this).css({border : "dotted 2px"});
 				}
-				$(this).html(color+"<br>");
+				$(this).html("<br>");
 				$(this).removeClass("filter_option_selected");
 				var index = $scope.filters.colors.indexOf(color);
 				if (index > -1){
@@ -276,10 +273,10 @@ function ResultsController($scope){
 				$(this).attr("checked", true);
 				if (color == "Black"){
 					// $(this).css({border : "solid gray 2px"});
-					$(this).html(color+"<br><img src='images/white-check.png'/>");
+					$(this).html("<br><img src='images/white-check.png'/>");
 				} else {
 					// $(this).css({border : "solid 2px"});
-					$(this).html(color+"<br><img src='images/black-check.png'/>");
+					$(this).html("<br><img src='images/black-check.png'/>");
 				}
 				$(this).addClass("filter_option_selected");
 				$scope.filters.colors.push(color);
