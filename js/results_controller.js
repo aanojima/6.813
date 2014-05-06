@@ -255,6 +255,7 @@ function ResultsController($scope){
 		// Update Colors on Change
 		$(".color_option").on("click", function(event){
 			var color = $(this).attr("value");
+			color = color == "MintCream" ? "Cream" : color;
 			var checked = $(this).attr("checked");
 			if (checked){
 				// Disable and Remove from Filters
