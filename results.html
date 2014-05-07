@@ -36,12 +36,13 @@
 			<div class="search-filter filter-room">
 				<h1>Room</h1>
 				<select>
+					<option ng-selected="selected" name="Any">Any</option>
 					<option ng-model="room" ng-repeat="room in options.rooms" name="{{room}}">{{room}}</option>
 				</select>
 			</div>
 			<div class="search-filter filter-color" ng-model="colors">
 					<h1>Color</h1>
-					<div id="{{color}}_color" style="background-color:{{color}}" class="color_option filter_option" value="{{color}}" ng-repeat="color in options.colors">{{color}}<br></div>
+					<div id="{{color}}_color" style="background-color:{{color}}" class="color_option filter_option" value="{{color}}" ng-repeat="color in options.colors"><br></div>
 			</div>
 			<div class="search-filter filter-style" ng-model="styles">
 				<h1>Style</h1>

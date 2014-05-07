@@ -4,13 +4,13 @@ function ResultsController($scope){
 	$scope.results = window.data;
 
 	$scope.options = {
-		rooms : ["", "Living Room", "Kitchen", "Bedroom", "Bathroom"],
+		rooms : ["Living Room", "Kitchen", "Bedroom", "Bathroom"],
 		colors : ["Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Brown", "Gray", "Black", "White", "MintCream"],
 		styles : ["Antique", "Rustic", "Modern", "Retro", "Romantic", "Simple", "Luxury", "Industrial"],
 	};
 
 	$scope.filters = {
-		room : "",
+		room : "Any",
 		colors : [],
 		styles : [],
 		budget : {
@@ -27,7 +27,9 @@ function ResultsController($scope){
 				break;
 			}
 			var result = data[id];
-			if ($scope.filters.room && result.filters.room != $scope.filters.room){
+			if ($scope.filters.room &&
+				$scope.filters.room != "Any" && 
+				result.filters.room != $scope.filters.room){
 				continue;
 			}
 			if (result.filters.price < $scope.filters.budget.min ||
@@ -147,9 +149,6 @@ function ResultsController($scope){
 			window.location.href = 'result.html' + query;
 		}
 
-		// Mint Cream
-		$("#MintCream_color").text("Cream");
-
 		// Search by URL Query
 		var args = getUrlVars();
 		if (args.r){
@@ -183,8 +182,7 @@ function ResultsController($scope){
 		}
 		$scope.applyFilters($scope.results);
 
-		// Update Room Filter View
-		$(".filter-room select").val($scope.filters.room);
+		$(".filter-room select").val($scope.filters.room);	
 
 		// Update Color Filter View
 		for (var i in args.c){
@@ -192,10 +190,10 @@ function ResultsController($scope){
 			$(".color_option[value='"+color+"']").attr("checked", true);
 			if (color == "Black"){
 				// $(".color_option[value='"+color+"']").css({border : "solid gray 2px"});
-				$(".color_option[value='"+color+"']").html(color+"<br><img src='images/white-check.png'/>");
+				$(".color_option[value='"+color+"']").html("<br><img src='images/white-check.png'/>");
 			} else {
 				// $(".color_option[value='"+color+"']").css({border : "solid 2px"});
-				$(".color_option[value='"+color+"']").html(color+"<br><img src='images/black-check.png'/>");
+				$(".color_option[value='"+color+"']").html("<br><img src='images/black-check.png'/>");
 			}
 			$(".color_option[value='"+color+"']").addClass("filter_option_selected");
 		}
@@ -259,6 +257,7 @@ function ResultsController($scope){
 		// Update Colors on Change
 		$(".color_option").on("click", function(event){
 			var color = $(this).attr("value");
+			color = color == "MintCream" ? "Cream" : color;
 			var checked = $(this).attr("checked");
 			if (checked){
 				// Disable and Remove from Filters
@@ -268,7 +267,7 @@ function ResultsController($scope){
 				} else {
 					// $(this).css({border : "dotted 2px"});
 				}
-				$(this).html(color+"<br>");
+				$(this).html("<br>");
 				$(this).removeClass("filter_option_selected");
 				var index = $scope.filters.colors.indexOf(color);
 				if (index > -1){
@@ -279,10 +278,10 @@ function ResultsController($scope){
 				$(this).attr("checked", true);
 				if (color == "Black"){
 					// $(this).css({border : "solid gray 2px"});
-					$(this).html(color+"<br><img src='images/white-check.png'/>");
+					$(this).html("<br><img src='images/white-check.png'/>");
 				} else {
 					// $(this).css({border : "solid 2px"});
-					$(this).html(color+"<br><img src='images/black-check.png'/>");
+					$(this).html("<br><img src='images/black-check.png'/>");
 				}
 				$(this).addClass("filter_option_selected");
 				$scope.filters.colors.push(color);
