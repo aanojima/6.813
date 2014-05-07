@@ -56,12 +56,8 @@
 
 
 .search {
-    background-color: #BBB9B9;
+    background-color: #DDDDDD;
     border-radius: 4px;
-    background: -webkit-linear-gradient(180deg, #BFBFBF, #F2F2F2); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(180deg, #BFBFBF, #F2F2F2); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(180deg, #BFBFBF, #F2F2F2); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(180deg, #BFBFBF, #F2F2F2); /* Standard syntax */
     height: 120px;
     margin-top: 4%;
 }
@@ -75,7 +71,7 @@
     padding-left: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
-    color: #FFFFFF;
+    color: #000000;
     font-size: 36px;
 }
 

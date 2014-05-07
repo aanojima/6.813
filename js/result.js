@@ -6,6 +6,11 @@
             window.location.href = "index.html";
         });
         
+        // "New Search" button event handler
+        $("#btn-search").click(function(e) {
+            window.location.href = "results.html";
+        });
+        
         // "My Account" button event handler
         $("#btn-account").click(function(e) {
             window.location.href = "account.html";

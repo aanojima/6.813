@@ -9,11 +9,7 @@ body {
 	bottom: 0px;
 	left: 0px;
 	width: 50%;
-	border-right: black solid 2px;
-}
-
-.navbar-brand {
-	border-bottom: black solid 2px;
+    background: url('../images/AccountBackground.jpg');
 }
 
 .result-title {
@@ -24,7 +20,6 @@ body {
 	line-height: 80px;
 	font-family: 'ostrich_sansmedium', Arial, sans-serif;
 	font-size: 35px;
-	border-top: black solid 1px;
 	
 }
 .result-designer {
@@ -33,11 +28,9 @@ body {
 	line-height:60px;
 	text-align:center;
 	font-family: 'ostrich_sansmedium', Arial, sans-serif;
-	border-bottom:black solid 2px;
 	font-size: 28px;
 }
 .result-description {
-	height: 400px;
 	width: 100%;
 	line-height: 32px;
 	padding: 2px;
