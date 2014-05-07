@@ -9,7 +9,11 @@ body {
 	bottom: 0px;
 	left: 0px;
 	width: 50%;
-    background: url('../images/AccountBackground.jpg');
+    background-color: #DDF7F7;
+    background: -webkit-linear-gradient(#DDF7F7, white); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#DDF7F7, white); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#DDF7F7, white); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#DDF7F7, white); /* Standard syntax */
 }
 
 .result-title {
